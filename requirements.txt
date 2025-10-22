@@ -1,0 +1,6 @@
+streamlit
+altair
+pandas
+gpxpy
+geopy
+python-dotenv
