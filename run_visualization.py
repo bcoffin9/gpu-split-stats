@@ -47,15 +47,15 @@ if uploaded_file:
 
     chart = alt.Chart(splits).mark_line(point=True).encode(
         x=alt.X(f"{unit}_split:Q", title=f"Distance ({unit})"),
-        y=alt.Y("split_time_sec:Q",
-                title=f"Pace ({time_format.replace('pace_', '').replace('_', ':')})"),
+        y=alt.Y("pace_seconds:Q",
+                title=f"{unit} Pace (s)"),
         tooltip=[
             f"{unit}_split", "split_time_sec", "pace_mmss", "pace_hhmmss", "pace_seconds"
         ]
     ).properties(height=400)
 
     st.subheader(f"{title}")
-    st.subheader(f"Pace per {step} {unit}")
+    st.subheader(f"{unit} Pace per {step} {unit}")
 
     st.altair_chart(chart, use_container_width=True)
 
